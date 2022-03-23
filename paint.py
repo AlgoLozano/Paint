@@ -48,11 +48,30 @@ def circle(start, end):
     
 def rectangle(start, end):
     """Draw rectangle from start to end."""
+    up()
+    goto(start.x,start.y) # inicio del rectangulo
+    down()
+    begin_fill()
+    for i in range(2):
+        forward(end.x-start.x) # controla la base del rectangulo
+        right(90) # gira 90 grados
+        forward(2*end.x-start.x) #  controla la altura del rectangulo
+        right(90) # gira 90 grados a la derecha
+    end_fill() # rellena con color escogido
     pass  # TODO
 
 
 def triangle(start, end):
     """Draw triangle from start to end."""
+    up()
+    goto(start.x,start.y) # inicio de nuestro triangulo
+    down()
+    begin_fill()
+    for i in range(2):
+        forward(end.x-start.x) # genera dos lados del triangulo en loop
+        right(120) # gira 120 grados a la derecha
+    fd(end.x-start.x) # ultimo lado del triangulo
+    end_fill() # rellena con color escogido
     pass  # TODO
 
 
